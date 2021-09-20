@@ -4,6 +4,7 @@ from django.urls import reverse
 
 from accountapp.models import HelloWorld
 
+# test 중
 
 def hello_world(request):
 
