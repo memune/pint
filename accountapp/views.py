@@ -33,3 +33,5 @@ class AccountCreateView(CreateView):
     # reverse_lazy는 cbv에서 활용
     template_name = 'accountapp/create.html'
 
+
+
