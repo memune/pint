@@ -4,6 +4,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView, DetailView
+
+from accountapp.forms import AccountUpdateForm
 from accountapp.models import HelloWorld
 
 # test 중
@@ -36,3 +38,10 @@ class AccountDetailView(DetailView):
     model = User
     context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
+
+class AccountUpdateView(CreateView):
+    model = User
+    form_class = AccountUpdateForm
+    success_url = rt everse_lazy('accountapp:hello_world')
+    # reverse_lazy는 cbv에서 활용
+    template_name = 'accountapp/update.html'
