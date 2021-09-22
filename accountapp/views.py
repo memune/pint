@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import CreateView, DetailView
+from django.views.generic import CreateView, DetailView, DeleteView
 
 from accountapp.forms import AccountUpdateForm
 from accountapp.models import HelloWorld
@@ -42,6 +42,14 @@ class AccountDetailView(DetailView):
 class AccountUpdateView(CreateView):
     model = User
     form_class = AccountUpdateForm
-    success_url = rt everse_lazy('accountapp:hello_world')
+    success_url = reverse_lazy('accountapp:hello_world')
     # reverse_lazy는 cbv에서 활용
     template_name = 'accountapp/update.html'
+
+class AccountDeleteView(DeleteView):
+    model = User
+    success_url = reverse_lazy('accountapp:login')
+    # reverse_lazy는 cbv에서 활용
+    template_name = 'accountapp/delete.html'
+
+
