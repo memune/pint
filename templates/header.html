@@ -12,6 +12,11 @@
                 <span>Projects</span>
             </a>
 
+           <a href="{% url 'subscribeapp:list' %}" class="header_nav">
+                <span>Subcription</span>
+            </a>
+
+
 
             {% if not user.is_authenticated %}
 
