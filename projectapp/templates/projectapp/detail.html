@@ -13,13 +13,21 @@
         {{ target_project.writer.profile.nickname }}
       </h5>
 
-      <img style="width: 100%; border-raidus: 1rem; margin: 2rem 0;" src="{{ target_project.image.url }}" alt="" style="width: 400px; margin: 3rem auto;">
+      <img style="width: 200px; border-raidus: 1rem; margin: 2rem 0;" src="{{ target_project.image.url }}" alt="">
 
       <p>
         {{ target_project.description }}
       </p>
 
     </div>
+
+    <div>
+
+      {% include 'snippets/list_fragment.html' with article_list=object_list %}
+
+    </div>
+
+
   </div>
 
 {% endblock %}
